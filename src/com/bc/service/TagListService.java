@@ -10,7 +10,7 @@ import com.bc.vo.TagListVO;
 
 public class TagListService implements Service<TagListVO,String>{
 
-	@Resource(name="tl")
+	@Resource(name="tldao")
 	Dao<TagListVO,String> tldao;
 	
 	@Override
