@@ -1,13 +1,12 @@
 package com.bc.dao.mapper;
 
 import java.util.ArrayList;
-
-import com.bc.vo.Users;
+import com.bc.vo.UsersVO;
 
 public interface UserMapper {
-	public void insert(Users obj);
+	public void insert(UsersVO obj);
 	public void delete(String obj);
-	public void update(Users obj);
-	public Users select(String obj);
-	public ArrayList<Users> selectall();
+	public void update(UsersVO obj);
+	public UsersVO select(String obj);
+	public ArrayList<UsersVO> selectall();
 }
