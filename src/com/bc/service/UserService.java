@@ -6,20 +6,20 @@ import javax.annotation.Resource;
 
 import com.bc.frame.Dao;
 import com.bc.frame.Service;
-import com.bc.vo.Users;
+import com.bc.vo.UsersVO;
 
-public class UserService implements Service<Users, String>{
+public class UserService implements Service<UsersVO, String>{
 
 	@Resource(name = "udao")
-	Dao<Users, String> udao;
+	Dao<UsersVO, String> udao;
 	
 	@Override
-	public void register(Users t) throws Exception {
+	public void register(UsersVO t) throws Exception {
 		udao.insert(t);
 	}
 
 	@Override
-	public void modify(Users t) throws Exception {
+	public void modify(UsersVO t) throws Exception {
 		udao.update(t);
 	}
 
@@ -29,12 +29,12 @@ public class UserService implements Service<Users, String>{
 	}
 
 	@Override
-	public Users get(String v) throws Exception {
+	public UsersVO get(String v) throws Exception {
 		return udao.select(v);
 	}
 
 	@Override
-	public ArrayList<Users> get() throws Exception {
+	public ArrayList<UsersVO> get() throws Exception {
 		return udao.selectall();
 	}
 

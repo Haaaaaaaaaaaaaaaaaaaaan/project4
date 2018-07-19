@@ -2,7 +2,7 @@ package com.bc.vo;
 
 import java.util.Date;
 
-public class Users {
+public class UsersVO {
 	private String id;
 	private String pwd;
 	private String name;
@@ -11,10 +11,10 @@ public class Users {
 	private Date regdate;
 	private String admin;
 	
-	public Users() {
+	public UsersVO() {
 	}
 
-	public Users(String id, String pwd, String name, String gender, String email, Date regdate, String admin) {
+	public UsersVO(String id, String pwd, String name, String gender, String email, Date regdate, String admin) {
 		this.id = id;
 		this.pwd = pwd;
 		this.name = name;
@@ -24,7 +24,7 @@ public class Users {
 		this.admin = admin;
 	}
 	
-	public Users(String id, String name, String email) {
+	public UsersVO(String id, String name, String email) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
