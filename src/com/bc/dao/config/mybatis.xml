@@ -19,7 +19,7 @@ PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
  	
  	<mappers>
 		<mapper resource="com/bc/dao/config/usermapper.xml"/>
-		<mapper resource="com/bc/dao/config/filesmapper.xml"/>
+		<mapper resource="com/bc/dao/config/filemapper.xml"/>
 		<mapper resource="com/bc/dao/config/foldermapper.xml"/>
 		<mapper resource="com/bc/dao/config/classmapper.xml"/>
 		<mapper resource="com/bc/dao/config/taglistmapper.xml"/>
