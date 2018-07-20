@@ -8,21 +8,14 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="select" parameterType="String" resultType="question">
 		SELECT * FROM QUESTION WHERE ID=#{obj}
 	</select>
-	<select id="selectContent" parameterType="String" resultType="question">
-		SELECT * FROM QUESTION WHERE TITLE=#{obj} or CONTENT=#{obj}
-	</select>
-	<select id="selectAuthor" parameterType="String" resultType="question">
-		SELECT * FROM QUESTION WHERE TITLE=#{obj}
-	</select>
-	
 	<select id="selectall" resultType="question">
 		SELECT * FROM QUESTION
 	</select>
 	<insert id="insert" parameterType="question">
-		INSERT INTO QUESTION VALUES (QUESTION_ID_SEQ,#{title},#{author},#{thumbsup},#{regdate},#{contents},,#{class_id},#{state},#{imgname1},#{imgname2},#{imgname3})
+		INSERT INTO QUESTION VALUES (QUESTION_ID_SEQ,#{title},#{author},#{thumbsup},SYSDATE,#{contents},,#{class_id},#{state},#{imgname1},#{imgname2},#{imgname3})
 	</insert>
 	<update id="update" parameterType="question">
-		UPDATE QUESTION SET TITLE=#{title},AUTHOR=#{author},THUMBSUP=#{thumbsup},REGDATE=#{regdate},CONTENTS=#{contents},CLASS_ID=#{class_id},STATE=#{state},IMGNAME1=#{imgname1},IMGNAME2=#{imgname2},IMGNAME3=#{imgname3} WHERE ID=#{id}
+		UPDATE QUESTION SET TITLE=#{title},AUTHOR=#{author},THUMBSUP=#{thumbsup},CONTENTS=#{contents},CLASS_ID=#{class_id},STATE=#{state},IMGNAME1=#{imgname1},IMGNAME2=#{imgname2},IMGNAME3=#{imgname3} WHERE ID=#{id}
 	</update>
 	<delete id="delete" parameterType="String">
 		DELETE FROM QUESTION WHERE ID=#{obj}

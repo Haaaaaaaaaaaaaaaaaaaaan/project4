@@ -8,6 +8,5 @@ public interface UserMapper {
 	public void delete(String obj);
 	public void update(UsersVO obj);
 	public UsersVO select(String obj);
-	public UsersVO selectFind(UsersVO obj); //이름과 이메일로 유저 검색
 	public ArrayList<UsersVO> selectall();
 }

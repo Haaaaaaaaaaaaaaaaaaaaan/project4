@@ -10,6 +10,5 @@ public interface TagMapper {
 	public void delete(String obj);
 	public void update(TagVO obj);
 	public TagVO select(String obj);
-	public TagVO selectName(String obj);
 	public ArrayList<TagVO> selectall();
 }

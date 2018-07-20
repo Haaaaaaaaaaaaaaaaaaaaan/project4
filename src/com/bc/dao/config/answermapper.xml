@@ -6,19 +6,25 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	
 	
 	<select id="select" parameterType="String" resultType="answer">
-		SELECT * FROM FILES WHERE ID=#{obj}
+		SELECT * FROM ANSWER WHERE ID=#{obj}
+	</select>
+	<select id="selectauthor" parameterType="String" resultType="answer">
+		SELECT * FROM ANSWER WHERE AUTHOR=#{obj}
+	</select>
+	<select id="selectqid" parameterType="String" resultType="answer">
+		SELECT * FROM ANSWER WHERE QUESTION_ID=#{obj}
 	</select>
 	<select id="selectall" resultType="answer">
-		SELECT * FROM FILES
+		SELECT * FROM ANSWER
 	</select>
 	<insert id="insert" parameterType="answer">
-		INSERT INTO FILES VALUES ()
+		INSERT INTO ANSWER VALUES (ANSWER_ID_SEQ.NEXTVAL,SYSDATE,#{author},#{question_id},#{content},#{thumbsup},#{imgname1},#{imgname2},#{imgname3})    
 	</insert>
 	<update id="update" parameterType="answer">
-		UPDATE FILES SET PWD=#{pwd},NAME=#{name},GENDER=#{gender},EMAIL=#{email} WHERE ID=#{id}
+		UPDATE ANSWER SET AUTHOR=#{author},QUESTION_ID=#{question_id},CONTENT=#{content}, THUMBSUP= #{thumbsup}, IMGNAME1 = #{imgname1}, IMGNAME2 =#{imgname2}, IMGNAME3 = #{imgname3} WHERE ID=#{id}  
 	</update>
 	<delete id="delete" parameterType="String">
-		DELETE FROM FILES WHERE ID=#{obj}
+		DELETE FROM ANSWER WHERE ID=#{obj}
 	</delete>
 	
 </mapper>

@@ -2,23 +2,23 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bc.dao.mapper.FilesMapper">
+<mapper namespace="com.bc.dao.mapper.ClassMapper">
 	
 	
 	<select id="select" parameterType="String" resultType="files">
-		SELECT * FROM FILES WHERE ID=#{obj}
+		SELECT * FROM CLASS WHERE ID=#{obj}
 	</select>
-	<select id="selectall" resultType="files">
-		SELECT * FROM FILES
+	<select id="selectall" resultType="class">
+		SELECT * FROM CLASS
 	</select>
-	<insert id="insert" parameterType="files">
-		INSERT INTO FILES VALUES (FILES_ID_SEQ,#{pwd},#{name})
+	<insert id="insert" parameterType="class">
+		INSERT INTO CLASS VALUES (CLASS_ID_SEQ,#{name},SYSDATE)
 	</insert>
-	<update id="update" parameterType="files">
-		UPDATE FILES SET PWD=#{pwd},NAME=#{name},GENDER=#{gender},EMAIL=#{email} WHERE ID=#{id}
+	<update id="update" parameterType="class">
+		UPDATE CLASS SET NAME=#{name} WHERE ID=#{id}
 	</update>
 	<delete id="delete" parameterType="String">
-		DELETE FROM FILES WHERE ID=#{obj}
+		DELETE FROM CLASS WHERE ID=#{obj}
 	</delete>
 	
 </mapper>
