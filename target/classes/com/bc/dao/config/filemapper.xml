@@ -12,10 +12,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM FILES
 	</select>
 	<insert id="insert" parameterType="files">
-		INSERT INTO FILES VALUES (FILES_ID_SEQ,#{folder_id},#{name})
+		INSERT INTO FILES VALUES (FILES_ID_SEQ,#{pwd},#{name})
 	</insert>
 	<update id="update" parameterType="files">
-		UPDATE FILES SET FOLDER_ID=#{folder_id},NAME=#{name} WHERE ID=#{id}
+		UPDATE FILES SET PWD=#{pwd},NAME=#{name},GENDER=#{gender},EMAIL=#{email} WHERE ID=#{id}
 	</update>
 	<delete id="delete" parameterType="String">
 		DELETE FROM FILES WHERE ID=#{obj}
