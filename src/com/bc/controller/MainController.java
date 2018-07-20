@@ -1,30 +1,27 @@
 package com.bc.controller;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.bc.frame.Service;
-import com.bc.vo.UsersVO;
-
-@Component
+@Controller
 public class MainController {
 
-	@Resource(name="uservice")
-	Service<UsersVO, String> uservice;
-	
+	//@Resource(name="uservice")
+	//Service<UsersVO, String> uservice;
+
 	//홈
-	@RequestMapping("main.bc")
+	@RequestMapping("/main.bc")
 	public String main() {
+		System.out.println("Main In");
 		return "main";
 	}
 	
 	//과목보기
-	@RequestMapping("codelist.bc")
+	@RequestMapping("/codelist.bc")
 	public ModelAndView codelist() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
@@ -33,7 +30,7 @@ public class MainController {
 	}
 	
 	//qna페이지
-	@RequestMapping("qna.bc")
+	@RequestMapping("/qna.bc")
 	public ModelAndView qna() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
@@ -42,7 +39,7 @@ public class MainController {
 	}
 	
 	//login페이지
-	@RequestMapping("login.bc")
+	@RequestMapping("/login.bc")
 	public ModelAndView login() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
@@ -51,7 +48,7 @@ public class MainController {
 	}
 	
 	//loginimpl
-	@RequestMapping("loginimpl.bc")
+	@RequestMapping("/loginimpl.bc")
 	public ModelAndView loginimpl(HttpServletRequest request) {
 		return null;
 	}
@@ -71,7 +68,7 @@ public class MainController {
 	}
 	
 	//회원가입 페이지
-	@RequestMapping("register.bc")
+	@RequestMapping("/register.bc")
 	public ModelAndView register() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
@@ -79,21 +76,21 @@ public class MainController {
 		return mv;
 	}
 	
-	//registerimpl
-	@RequestMapping("registerimpl.bc")
-	public ModelAndView registerimpl(UsersVO user) {
-
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("main");
-		try {
-			uservice.register(user);
-			mv.addObject("centerpage", "registerok");
-		} catch (Exception e) {
-			mv.addObject("centerpage", "registerfail");
-			e.printStackTrace();
-		}
-
-		return mv;
-	}
+//	//registerimpl
+//	@RequestMapping("/registerimpl.bc")
+//	public ModelAndView registerimpl(UsersVO user) {
+//
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("main");
+//		try {
+//			uservice.register(user);
+//			mv.addObject("centerpage", "registerok");
+//		} catch (Exception e) {
+//			mv.addObject("centerpage", "registerfail");
+//			e.printStackTrace();
+//		}
+//
+//		return mv;
+//	}
 	
 }
